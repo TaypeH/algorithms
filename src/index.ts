@@ -1,5 +1,5 @@
 import inquirer from 'inquirer';
-import happyTicket from './algorithms/happy-ticket/index.js';
+import happyTicket from './algorithms/happy-ticket/index';
 
 type Command = {
     name: string;

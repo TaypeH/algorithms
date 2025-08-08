@@ -14,5 +14,4 @@ const happyTicket = (data: { in: number, out: number }) => {
     
 };
 
-export default { run: () => Runner(happyTicket, arrayData) };
-
+export default Runner(happyTicket, arrayData);
