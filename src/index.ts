@@ -1,5 +1,5 @@
 import inquirer from 'inquirer';
-import { spawn } from 'child_process';
+import happyTicket from './algorithms/happy-ticket/index.js';
 
 type Command = {
     name: string;
@@ -8,14 +8,11 @@ type Command = {
 
 const commands: Command[] = [
     {
-        name: 'sorting',
-        run: () => {
-            const tsc = spawn('tsc', ['--build'], { stdio: 'inherit' });
-            tsc.on('exit', code => process.exit(code ?? 0));
-        },
+        name: 'happy ticket',
+        run: happyTicket.run,
     },
     {
-        name: 'Выход',
+        name: 'exit',
         run: () => process.exit(0),
     },
 ];
@@ -26,7 +23,7 @@ async function showMenu(): Promise<void> {
         {
             type: 'list',
             name: 'choice',
-            message: 'Выберите команду:',
+            message: 'choose task:',
             choices: commands.map(cmd => cmd.name),
         },
     ]);
