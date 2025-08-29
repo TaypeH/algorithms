@@ -1,4 +1,4 @@
-const Runner = (task: (data: { in: number, out: number }) => void, arrayData: { in: number, out: number }[]) => ({
+const Runner = <T>(task: (data: T) => void, arrayData: T[]) => ({
     run: () => {
         for (const data of arrayData) task(data)
     }

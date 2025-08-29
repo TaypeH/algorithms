@@ -1,5 +1,6 @@
 import inquirer from 'inquirer';
-import happyTicket from './algorithms/happy-ticket/index';
+import happyTicket from './algorithms/happy-ticket';
+import sortMergeArray from './algorithms/sort-merge-array';
 
 type Command = {
     name: string;
@@ -10,6 +11,10 @@ const commands: Command[] = [
     {
         name: 'happy ticket',
         run: happyTicket.run,
+    },
+    {
+        name: 'sort merge array',
+        run: sortMergeArray.run,
     },
     {
         name: 'exit',
